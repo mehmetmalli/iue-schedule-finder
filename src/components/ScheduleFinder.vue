@@ -14,7 +14,7 @@
           multiple
         ></v-autocomplete>
       </v-flex>
-      <v-btn class="ma-3" @click="findSchedules" color="info"
+      <v-btn class="ma-3" @click="findSchedules" color="info" :disabled="selectedCourses.length == 0"
         >Find Possible Schedules</v-btn
       >
       <v-btn class="ma-3" @click="clear" color="error">Clear All</v-btn>
@@ -29,17 +29,17 @@
       </div>
     </div>
 
-    <h3 v-if="show && combinationsArray.length > 1" class="ma-3">
+    <h3 v-if="show && combinationsArray.length > 1 && selectedCourses.length > 0" class="ma-3">
       There are {{ combinationsArray.length }} possible schedules.
     </h3>
-    <h3 v-else-if="show && combinationsArray.length == 1" class="ma-3">
+    <h3 v-else-if="show && combinationsArray.length == 1 && selectedCourses.length > 0" class="ma-3">
       There is 1 possible schedule.
     </h3>
-    <h3 v-else-if="show && combinationsArray.length == 0" class="ma-3">
+    <h3 v-else-if="show && combinationsArray.length == 0 && selectedCourses.length > 0" class="ma-3">
       There is no possible schedule.
     </h3>
     <h3 v-else class="ma-3">
-      Select courses from the dropdown.
+      Select courses from the dropdown and click the Find Possible Schedules button.
     </h3>
 
     <v-layout wrap>

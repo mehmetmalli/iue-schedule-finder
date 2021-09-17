@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="combination.length > 0">
     <h1>Variation #{{ index + 1 }}</h1>
     <table>
       <tr>
