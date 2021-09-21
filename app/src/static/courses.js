@@ -1,4 +1,5 @@
-const courses = [{
+export default [
+  {
     code: "ACC 307",
     course: "Denetim ve Güvence",
     ects: 6,
@@ -7371,5 +7372,3 @@ const courses = [{
     ]
   }
 ]
-
-export default courses;
