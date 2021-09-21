@@ -40,7 +40,7 @@
     </h3>
     <h3 v-else class="ma-3">
      <!--  Select courses from the dropdown and click the Find Possible Schedules button. -->
-      Select courses from the dropdown and click the Find Possible Schedules button.
+      Select courses from the dropdown.
     </h3>
 
     <v-layout wrap>
