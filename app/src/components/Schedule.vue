@@ -8,26 +8,8 @@
 
       <tr v-for="(timePeriod, index) in timePeriods" :key="index">
         <td>{{ timePeriod }}</td>
-        <td>
-          <span v-if="combination.includes(index + (timePeriods.length * 0) + 1)">{{ courseNames[index + (timePeriods.length * 0) + 1] }}</span>
-        </td>
-        <td>
-          <span v-if="combination.includes(index + (timePeriods.length * 1) + 1)">{{ courseNames[index + (timePeriods.length * 1) + 1] }}</span>
-        </td>
-        <td>
-          <span v-if="combination.includes(index + (timePeriods.length * 2) + 1)">{{ courseNames[index + (timePeriods.length * 2) + 1] }}</span>
-        </td>
-        <td>
-          <span v-if="combination.includes(index + (timePeriods.length * 3) + 1)">{{ courseNames[index + (timePeriods.length * 3) + 1] }}</span>
-        </td>
-        <td>
-          <span v-if="combination.includes(index + (timePeriods.length * 4) + 1)">{{ courseNames[index + (timePeriods.length * 4) + 1] }}</span>
-        </td>
-        <td>
-          <span v-if="combination.includes(index + (timePeriods.length * 5) + 1)">{{ courseNames[index + (timePeriods.length * 5) + 1] }}</span>
-        </td>
-        <td>
-          <span v-if="combination.includes(index + (timePeriods.length * 6) + 1)">{{ courseNames[index + (timePeriods.length * 6) + 1] }}</span>
+        <td v-for="(_, i) in headers.slice(1)" :key="i">
+          <span>{{ courseNames[index + (timePeriods.length * i) + 1] }}</span>
         </td>
       </tr>
     </table>
@@ -35,7 +17,7 @@
 </template>
 
 <script>
-import headers from "../static/days";
+import headers from "../static/headers";
 import timePeriods from "../static/periods";
 
 export default {
