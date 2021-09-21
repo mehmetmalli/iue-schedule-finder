@@ -14,9 +14,9 @@
           multiple
         ></v-autocomplete>
       </v-flex>
-      <v-btn class="ma-3" @click="findSchedules" color="info" :disabled="selectedCourses.length == 0"
-        >Find Possible Schedules</v-btn
-      >
+<!--       <v-btn class="ma-3" @click="findSchedules" color="info" :disabled="selectedCourses.length == 0"
+        >Find Possible Schedules</v-btn> -->
+      
       <v-btn class="ma-3" @click="clear" color="error">Clear All</v-btn>
     </v-layout>
 
@@ -39,6 +39,7 @@
       There is no possible schedule.
     </h3>
     <h3 v-else class="ma-3">
+     <!--  Select courses from the dropdown and click the Find Possible Schedules button. -->
       Select courses from the dropdown and click the Find Possible Schedules button.
     </h3>
 
@@ -74,7 +75,7 @@ export default {
       courseNames: [],
       combinationsArray: [],
       show: false,
-      courses,
+      courses
     };
   },
   methods: {
@@ -149,11 +150,17 @@ export default {
     },
     remove: function (index) {
       this.selectedCourses.splice(index, 1);
-      this.findSchedules();
     },
   },
   components: {
     Schedule
   },
+  watch: {
+  selectedCourses: {
+    handler() {
+      this.findSchedules();
+    }
+  }
+}
 };
 </script>
