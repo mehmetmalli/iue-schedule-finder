@@ -1,14 +1,5 @@
-module.exports.days = {
-    "Pazartesi": 0,
-	"Salı": 14,
-    "Çarşamba": 28,
-    "Perşembe": 42,
-    "Cuma": 56,
-    "Cumartesi": 70,
-    "Pazar": 84
-}
 
-module.exports.startTimes = {
+const startTimes = {
     "09:00": 1,
     "10:00": 2,
     "11:00": 3,
@@ -25,7 +16,7 @@ module.exports.startTimes = {
     "22:00": 14
 }
 
-module.exports.finishTimes = {
+const finishTimes = {
     "09:50": 1,
     "10:50": 2,
     "11:50": 3,
@@ -41,3 +32,18 @@ module.exports.finishTimes = {
     "21:50": 13,
     "22:50": 14
 }
+
+const timesCount = Object.keys(startTimes).length;
+
+const days = {
+    "Pazartesi": timesCount * 0,
+    "Salı": timesCount * 1,
+    "Çarşamba": timesCount * 2,
+    "Perşembe": timesCount * 3,
+    "Cuma": timesCount * 4,
+    "Cumartesi": timesCount * 5,
+    "Pazar": timesCount * 6
+}
+
+module.exports = { days, startTimes, finishTimes };
+
