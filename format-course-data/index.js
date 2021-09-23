@@ -9,17 +9,12 @@ let addedCourses = {};
 let processedCourses = [];
 
 for (let course of courses) {
-	if (addedCourses[course.code]) {
-		for (let processedCourse of processedCourses) {
-			if (processedCourse.code === course.code) {
-				processedCourse.time.push(course.time);
-				break;
-			}
-		}
+	if (course.code in addedCourses) { //https://jsben.ch/7EFWK
+		processedCourses[addedCourses[course.code]].time.push(course.time);
 	} else {
-		addedCourses[course.code] = true;
 		course.time = [course.time];
 		processedCourses.push(course);
+		addedCourses[course.code] = processedCourses.length - 1; //save index for later use
 	}
 }
 
@@ -40,4 +35,4 @@ for (let processedCourse of processedCourses) {
 	}
 }
 
-console.log(JSON.stringify(processedCourses, null, 2));
+//console.log(JSON.stringify(processedCourses, null, 2));
