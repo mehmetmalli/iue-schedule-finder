@@ -1,5 +1,5 @@
 <template>
-  <v-container class="ma-3">
+  <v-container class="ma-3" fluid>
     <v-layout row>
       <v-flex xs12 sm12 md6 lg6>
         <v-autocomplete
@@ -10,7 +10,6 @@
           menu-props="auto"
           item-text="code"
           return-object
-          outline
           multiple
         ></v-autocomplete>
       </v-flex>
@@ -25,7 +24,7 @@
         <span class="font-weight-bold"
           >{{ item.code }} - {{ item.course }} - ({{ item.ects }} ECTS)</span
         >
-        <span class="font-weight-thin" @click="remove(i)">remove</span>
+        <span class="font-weight-thin ml-2" @click="remove(i)">remove</span>
       </div>
     </div>
 
@@ -53,7 +52,7 @@
     </h3>
     <h3 v-else class="ma-3">
       <!--  Select courses from the dropdown and click the Find Possible Schedules button. -->
-      Select courses from the dropdown.
+      Search and select courses from the dropdown.
     </h3>
 
     <v-layout wrap>

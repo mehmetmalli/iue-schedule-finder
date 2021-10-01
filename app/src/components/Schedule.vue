@@ -1,9 +1,9 @@
 <template>
-  <div v-if="combination.length > 0">
+  <v-card class="pl-2 pr-2 pb-2 elevation-4" v-if="combination.length > 0">
     <h1>Variation #{{ index + 1 }}</h1>
     <table>
       <tr>
-        <th v-for="(header, index) in headers" :key="index">{{ header }}</th>
+        <th class="pl-" v-for="(header, index) in headers" :key="index">{{ header }}</th>
       </tr>
 
       <tr v-for="(timePeriod, index) in timePeriods" :key="index">
@@ -13,7 +13,7 @@
         </td>
       </tr>
     </table>
-  </div>
+  </v-card>
 </template>
 
 <script>
